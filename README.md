@@ -4,9 +4,9 @@
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Aziz jellazi
+  - __Scrum Master__: Achref gallah
+  - __Development Team Members__: Baha nouili
 
 ## Table of Contents
 
