@@ -3,30 +3,18 @@ const mongoose = require('mongoose');
 const cors = require('cors'); 
 const app = express() ; 
 const db = require('./Models/Booking')
-
+const hotelRouter = require('./Routers/hotelRouters')
 
 
 mongoose.connect('mongodb://localhost:27017/HOTELBOOKING', {useNewUrlParser: true , useUnifiedTopology: true },()=>{
     console.log('DATABASE CONNECTED!')
 });
 
-
+app.use(cors()); 
 app.use(express.json());
 app.use(express.urlencoded({extended:true})); 
 
-
-app.get('/achref',(req,res)=>{
-    res.send('HELLO FROM THE SERVER SIDE!')
-})
-
-app.post('/post', async (req,res)=>{
-try {
-const postedValue = await db.create(req.body);
-res.send('DONE!')   
-} catch (error) {
-    console.log(error)
-}
-}); 
+app.use('/api',hotelRouter) ;
 
 
 const PORT = process.env.PORT || 3900 ; 
